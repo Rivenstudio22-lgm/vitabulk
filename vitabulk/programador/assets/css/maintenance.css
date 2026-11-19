@@ -1,0 +1,291 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #16823a;
+    --green-dark: #0d642b;
+    --bg: #f3f6f4;
+    --card: #ffffff;
+    --border: #dfe6e1;
+    --text: #17231c;
+    --muted: #758078;
+    --red: #c62828;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
+
+.developer-layout {
+    min-height: 100vh;
+    display: flex;
+}
+
+.developer-sidebar {
+    width: 250px;
+    min-height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #102018;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.developer-logo {
+    padding: 25px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.developer-logo strong {
+    display: block;
+    font-size: 20px;
+}
+
+.developer-logo span {
+    display: block;
+    margin-top: 4px;
+    color: #64c982;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.developer-sidebar nav {
+    padding: 15px;
+}
+
+.developer-sidebar nav a {
+    display: block;
+    padding: 12px 14px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    color: #cbd5ce;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.developer-sidebar nav a:hover,
+.developer-sidebar nav a.active {
+    background: var(--green);
+    color: white;
+}
+
+.developer-user {
+    margin-top: auto;
+    padding: 20px;
+    border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.developer-user strong {
+    display: block;
+}
+
+.developer-user small {
+    display: block;
+    color: #8d9b92;
+    margin: 4px 0 12px;
+}
+
+.developer-user a {
+    color: #ff8585;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.developer-main {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding: 30px;
+}
+
+.developer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.developer-header h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.developer-header p {
+    margin: 5px 0 0;
+    color: var(--muted);
+}
+
+.system-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 13px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.system-status span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #24a148;
+}
+
+.developer-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.developer-stat {
+    padding: 20px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.developer-stat small {
+    display: block;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.developer-stat strong {
+    display: block;
+    margin-top: 7px;
+    font-size: 30px;
+}
+
+.developer-stat.success strong {
+    color: var(--green);
+}
+
+.developer-stat.danger strong {
+    color: var(--red);
+}
+
+.developer-card {
+    margin-bottom: 20px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.card-header p {
+    margin: 4px 0 0;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 9px 13px;
+    border-radius: 7px;
+    background: var(--green);
+    color: white;
+    text-decoration: none;
+    border: 0;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: var(--green-dark);
+}
+
+.diagnostic-list {
+    padding: 10px 20px 20px;
+}
+
+.diagnostic-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #edf1ee;
+}
+
+.diagnostic-icon {
+    width: 25px;
+    height: 25px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.diagnostic-item.ok .diagnostic-icon {
+    background: #e7f6eb;
+    color: var(--green);
+}
+
+.diagnostic-item.error .diagnostic-icon {
+    background: #fdeaea;
+    color: var(--red);
+}
+
+.diagnostic-item strong {
+    display: block;
+    font-size: 13px;
+}
+
+.diagnostic-item small {
+    display: block;
+    margin-top: 3px;
+    color: var(--muted);
+}
+
+.site-preview iframe {
+    width: 100%;
+    height: 650px;
+    border: 0;
+    background: white;
+}
+
+@media(max-width:800px) {
+
+    .developer-sidebar {
+        width: 210px;
+    }
+
+    .developer-main {
+        margin-left: 210px;
+        width: calc(100% - 210px);
+        padding: 15px;
+    }
+
+    .developer-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .developer-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
